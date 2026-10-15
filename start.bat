@@ -1,0 +1,16 @@
+@echo off
+echo Starting Smart College Bus Network...
+
+echo Starting backend...
+start "Smart College Bus - Backend" cmd /k "backend_start.bat"
+
+echo Starting frontend...
+start "Smart College Bus - Frontend" cmd /k "frontend_start.bat"
+
+echo Wait a few seconds for servers to start...
+timeout /t 5
+
+echo Opening frontend in browser...
+start http://localhost:5173
+
+echo Backend API is available at http://localhost:8000/docs
